@@ -1,0 +1,49 @@
+<?php include 'db.php'; ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Church Finance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Church Official Payment Details</h2>
+
+<div class="accounts-box">
+  <p><strong>Bank:</strong> Ecobank Ghana</p>
+  <p><strong>Account Name:</strong> Gospel Seed Outreach International</p>
+  <p><strong>Account Number:</strong> 1234567890</p>
+  <p><strong>Mobile Money:</strong> MTN MoMo – 0540000000</p>
+</div>
+
+<hr>
+
+<h3>Submit Payment Information</h3>
+
+<form action="submit_payment.php" method="POST">
+  <input name="full_name" required placeholder="Full Name">
+  <input name="phone" required placeholder="Phone Number">
+  <input name="email" placeholder="Email (optional)">
+  <input name="amount" type="number" required placeholder="Amount (GHS)">
+
+  <select name="payment_type" required>
+    <option value="">Select Payment Type</option>
+    <option>Tithe</option>
+    <option>Offering</option>
+    <option>Seed</option>
+    <option>Donation</option>
+  </select>
+
+  <select name="payment_method" required>
+    <option>Mobile Money</option>
+    <option>Bank Transfer</option>
+  </select>
+
+  <input name="transaction_reference" required placeholder="Transaction Reference">
+  <textarea name="message" placeholder="Message / Prayer Note"></textarea>
+
+  <button type="submit">Submit Payment</button>
+</form>
+
+</body>
+</html>
